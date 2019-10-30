@@ -1,0 +1,32 @@
+{
+  "name": "unisharebot",
+  "version": "0.1.0",
+  "description": "unisharebot",
+  "main": "bot.js",
+  "scripts": {
+    "start": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
+    "stop": "pm2 stop bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/derogab/unisharebot.git"
+  },
+  "keywords": [
+    "bot",
+    "unishare",
+    "telegram"
+  ],
+  "author": "derogab",
+  "bugs": {
+    "url": "https://github.com/derogab/unisharebot/issues"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "pm2": "^2.7.2",
+    "telegraf": "^3.14.1",
+    "yaml": "^1.7.2"
+  },
+  "engines": {
+    "node": ">=8.1.3"
+  }
+}
