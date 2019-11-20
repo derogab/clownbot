@@ -25,7 +25,7 @@ const bot = new Telegraf(config.bot.token, {username: config.bot.username});
  */
 const auth = function(ctx){
     // not available to everyone
-    if(config.auth.includes(ctx.message.chat.id)){
+    if(config.bot.allowed_users.includes(ctx.message.chat.id)){
         return true;
     }
     return false;
