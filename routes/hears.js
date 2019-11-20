@@ -5,6 +5,12 @@
  */
 module.exports = function (bot, info, config, auth) {
 
+	bot.hears(/ping/i, (ctx) => {
+		if(auth(ctx)) {
+			ctx.reply('pong');
+		}
+	});
+
 	bot.hears(/unixmib/i, (ctx) => {
 		if(auth(ctx)) {
 			ctx.replyWithSticker('CAADBAADZAIAAls4VQMusShtjmekHxYE');
