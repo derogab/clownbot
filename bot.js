@@ -5,10 +5,11 @@ const YAML = require('yaml');
 /**
  * Init
  * =====================
- * Get data from /config.yml
+ * Get data from /config.yml and /package.json
  */
 const file = fs.readFileSync('./config.yml', 'utf8');
 const config = YAML.parse(file);
+const info = require('./package.json');
 
 /**
  * Bot
@@ -35,9 +36,9 @@ const auth = function(ctx){
  * =====================
  * Commands and hears (reply message). Core of bot.
  */
-require(__dirname + '/routes/hears')(bot, config, auth);
-require(__dirname + '/routes/command')(bot, config, auth);
-require(__dirname + '/routes/inline_query')(bot, config, auth);
+require(__dirname + '/routes/hears')(bot, info, config, auth);
+require(__dirname + '/routes/command')(bot, info, config, auth);
+require(__dirname + '/routes/inline_query')(bot, info, config, auth);
 
 /**
  * Router Explicit
@@ -47,7 +48,7 @@ require(__dirname + '/routes/inline_query')(bot, config, auth);
 
 fs.stat('routes/explicit.js', function(err, stat) {
     if(err == null) {
-        require(__dirname + '/routes/explicit')(bot, config, auth);
+        require(__dirname + '/routes/explicit')(bot, info, config, auth);
     } 
 });
 
