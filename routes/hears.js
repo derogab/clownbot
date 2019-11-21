@@ -17,4 +17,25 @@ module.exports = function (bot, info, config, auth) {
 		}
 	});
 
+	bot.hears(/fail/i, (ctx) => {
+		if(auth(ctx)) {
+
+			var giphy = require('giphy-api')(config.giphy.key);
+
+			giphy.search({
+				q: 'robot fail',
+				rating: 'g'
+			}, function (err, res) {
+
+				// Res contains gif data!
+				var gifs = res.data;
+				var rand = Math.floor((Math.random() * 25) + 1);
+				var gif = gifs[rand].images.downsized_large.url;
+				ctx.replyWithAnimation(gif);
+
+			});
+
+		}
+	});
+
 };
