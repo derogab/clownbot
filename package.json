@@ -1,6 +1,6 @@
 {
   "name": "unisharebot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "unisharebot",
   "main": "bot.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "fs": "0.0.1-security",
+    "giphy-api": "^2.0.1",
     "pm2": "^2.7.2",
     "telegraf": "^3.14.1",
     "yaml": "^1.7.2"

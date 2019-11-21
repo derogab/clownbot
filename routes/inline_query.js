@@ -3,6 +3,6 @@
  * =====================
  * If i write: <@unisharebot text> in groups or chats
  */
-module.exports = function (bot, config, auth) {
+module.exports = function (bot, info, config, auth) {
 
 };

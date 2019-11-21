@@ -3,7 +3,7 @@
  * =====================
  * Write / and see commands of bot
  */
-module.exports = function(bot, config, auth) {
+module.exports = function(bot, info, config, auth) {
 
     /**
      * Command: appunti
@@ -25,7 +25,7 @@ module.exports = function(bot, config, auth) {
      */
     function help(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che dovrai scoprire :)\n\nVersion: "+config.version);
+            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che dovrai scoprire :)\n\nVersion: "+info.version);
         }
     }
     bot.command('help', help);
