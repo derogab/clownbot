@@ -44,7 +44,7 @@ module.exports = function(bot, info, config, auth) {
      */
     function help(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che dovrai scoprire :)\n\nVersion: "+info.version);
+            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/sponsor - link per supportare il bot\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che dovrai scoprire :)\n\nVersion: "+info.version);
         }
     }
     bot.command('help', help);
