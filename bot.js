@@ -38,6 +38,7 @@ const auth = function(ctx){
  */
 require(__dirname + '/routes/hears')(bot, info, config, auth);
 require(__dirname + '/routes/commands')(bot, info, config, auth);
+require(__dirname + '/routes/callbacks')(bot, info, config, auth);
 require(__dirname + '/routes/inline_query')(bot, info, config, auth);
 
 /**

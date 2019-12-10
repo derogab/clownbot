@@ -3,6 +3,8 @@
  * =====================
  * If i write "hi" bot response "hello"
  */
+const Markup = require('telegraf/markup');
+
 module.exports = function (bot, info, config, auth) {
 
 	bot.hears(/ping/i, (ctx) => {
@@ -35,6 +37,17 @@ module.exports = function (bot, info, config, auth) {
 
 			});
 
+		}
+	});
+
+	bot.hears(/(spara|kill|shoot)/i, (ctx) => {
+		if(auth(ctx)) {
+			ctx.replyWithAnimation(
+				'https://media.giphy.com/media/26xopsR7cWySdKNgY/giphy.gif',
+				Markup.inlineKeyboard([
+					Markup.callbackButton('Shoot!', 'shoot')
+				]).extra()
+			);
 		}
 	});
 
