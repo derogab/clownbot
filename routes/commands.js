@@ -13,10 +13,29 @@ module.exports = function(bot, info, config, auth) {
      */
     function appunti(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Appunti: https://github.com/dlcgold/Appunti");
+            ctx.reply("[Appunti](https://github.com/dlcgold/Appunti) by @dlcgold", {
+                parse_mode: "Markdown",
+                disable_web_page_preview: true
+            });
         }
     }
     bot.command('appunti', appunti);
+
+    /**
+     * Command: sponsor
+     * =====================
+     * Send link to support this bot
+     *
+     */
+    function sponsor(ctx) {
+        if(auth(ctx)) {
+            ctx.reply("Puoi supportare il bot a [questo link](https://patreon.com/derogab)", {
+                parse_mode: "Markdown",
+                disable_web_page_preview: true
+            });
+        }
+    }
+    bot.command('sponsor', sponsor);
 
     /**
      * Command: help
