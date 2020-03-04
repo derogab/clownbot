@@ -38,13 +38,26 @@ module.exports = function(bot, info, config, auth) {
     bot.command('sponsor', sponsor);
 
     /**
+     * Command: version
+     * =====================
+     * Send bot version
+     *
+     */
+    function version(ctx) {
+        if(auth(ctx)) {
+            ctx.reply("Version: "+info.version);
+        }
+    }
+    bot.command('version', version);
+
+    /**
      * Command: help
      * =====================
      * Send list of bot commands
      */
     function help(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/sponsor - link per supportare il bot\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che dovrai scoprire :)\n\nVersion: "+info.version);
+            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/sponsor - link per supportare il bot\n/version - versione del bot\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che devi ancora scoprire :)\n\nVersion: "+info.version);
         }
     }
     bot.command('help', help);
