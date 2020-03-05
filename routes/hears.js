@@ -40,7 +40,7 @@ module.exports = function (bot, info, config, auth) {
 		}
 	});
 
-	bot.hears(/l([o]+)l/i, (ctx) => {
+	bot.hears(/(l([o]+)l|[a]*[h]+[a]+[h]+)/i, (ctx) => {
 		if(auth(ctx)) {
 
 			var giphy = require('giphy-api')(config.giphy.key);
@@ -67,6 +67,17 @@ module.exports = function (bot, info, config, auth) {
 				'https://media.giphy.com/media/26xopsR7cWySdKNgY/giphy.gif',
 				Markup.inlineKeyboard([
 					Markup.callbackButton('Shoot!', 'shoot')
+				]).extra()
+			);
+		}
+	});
+
+	bot.hears(/(boo*om|bomba|bomb|explosion|esplosione)/i, (ctx) => {
+		if(auth(ctx)) {
+			ctx.replyWithAnimation(
+				'https://media.giphy.com/media/3o7qEcqN5PjN90jNC0/source.gif',
+				Markup.inlineKeyboard([
+					Markup.callbackButton('Boom!', 'boom')
 				]).extra()
 			);
 		}
