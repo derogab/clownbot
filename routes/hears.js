@@ -72,4 +72,15 @@ module.exports = function (bot, info, config, auth) {
 		}
 	});
 
+	bot.hears(/(boo*om|bomba|bomb|explosion|esplosione)/i, (ctx) => {
+		if(auth(ctx)) {
+			ctx.replyWithAnimation(
+				'https://media.giphy.com/media/3o7qEcqN5PjN90jNC0/source.gif',
+				Markup.inlineKeyboard([
+					Markup.callbackButton('Boom!', 'boom')
+				]).extra()
+			);
+		}
+	});
+
 };
