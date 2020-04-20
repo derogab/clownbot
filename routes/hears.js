@@ -83,4 +83,12 @@ module.exports = function (bot, info, config, auth) {
 		}
 	});
 
+	bot.hears(/\b(serpente|snake)\b/i, (ctx) => {
+		if(auth(ctx)) {
+			ctx.replyWithAnimation(
+				'https://media.giphy.com/media/shohQj1Ju9fJC/giphy.gif'
+			);
+		}
+	});
+
 };
