@@ -38,6 +38,22 @@ module.exports = function(bot, info, config, auth) {
     bot.command('sponsor', sponsor);
 
     /**
+     * Command: source
+     * =====================
+     * Send link to the source code of this bot
+     *
+     */
+    function source(ctx) {
+        if(auth(ctx)) {
+            ctx.reply("Puoi trovare il codice sorgente del bot su [github.com/derogab/unisharebot](https://github.com/derogab/unisharebot)", {
+                parse_mode: "Markdown",
+                disable_web_page_preview: false
+            });
+        }
+    }
+    bot.command('source', source);
+
+    /**
      * Command: version
      * =====================
      * Send bot version
@@ -57,7 +73,7 @@ module.exports = function(bot, info, config, auth) {
      */
     function help(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/sponsor - link per supportare il bot\n/version - versione del bot\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che devi ancora scoprire :)\n\nVersion: "+info.version);
+            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/sponsor - link per supportare il bot\n/source - link al codice sorgente del bot\n/version - versione del bot\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che devi ancora scoprire :)\n\nVersion: "+info.version);
         }
     }
     bot.command('help', help);
