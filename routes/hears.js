@@ -7,7 +7,7 @@ const Markup = require('telegraf/markup');
 
 module.exports = function (bot, info, config, auth) {
 
-	bot.hears(/ping/i, (ctx) => {
+	bot.hears(/\bping\b/i, (ctx) => {
 		if(auth(ctx)) {
 			ctx.reply('pong');
 		}
