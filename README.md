@@ -28,4 +28,4 @@ npm install && npm start
 ```
 
 ### License
-`@clownbot` is made with ♥  by [derogab](https://github.com/derogab) and it's released under the MIT license.
+`clownbot` is made with ♥  by [derogab](https://github.com/derogab) and it's released under the MIT license.
