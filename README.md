@@ -3,17 +3,24 @@
 </p>
 <h2 align="center">A clown bot to cheer up conversations in own university chat group</h2>
 
-### Installation
-```
-npm install
-```
-
 ### Configuration
-Copy `config.yml.tpl` template in `config.yml` w/ your info.
+Copy `config.yml.tpl` template in `config.yml` with your info.
 
-### Usage
+### Extra
+Copy `extra.js.tpl` template in `extra.js` to add extra features.
+
+### Start 
+##### Using docker
 ```
-npm start
+docker run \
+  -dit \
+  --mount type=bind,source=/path/to/host/private/,target=/bot/private \
+  derogab/unisharebot
+```
+Replace `/path/to/host/private/` with absolute path to your private folder (containing config and extra).
+##### Using source
+```
+npm install && npm start
 ```
 
 ### License

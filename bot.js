@@ -7,7 +7,7 @@ const YAML = require('yaml');
  * =====================
  * Get data from /config.yml and /package.json
  */
-const file = fs.readFileSync('./config.yml', 'utf8');
+const file = fs.readFileSync('./private/config.yml', 'utf8');
 const config = YAML.parse(file);
 const info = require('./package.json');
 
@@ -42,14 +42,14 @@ require(__dirname + '/routes/callbacks')(bot, info, config, auth);
 require(__dirname + '/routes/inline_query')(bot, info, config, auth);
 
 /**
- * Router Explicit
+ * Router Extra
  * =====================
- * Uncensored content / Parental Advisory disabled
+ * Extra private contents
  */
 
-fs.stat('routes/explicit.js', function(err, stat) {
+fs.stat('private/extra.js', function(err, stat) {
     if(err == null) {
-        require(__dirname + '/routes/explicit')(bot, info, config, auth);
+        require(__dirname + '/private/extra')(bot, info, config, auth);
     } 
 });
 
