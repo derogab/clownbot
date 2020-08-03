@@ -6,22 +6,6 @@
 module.exports = function(bot, info, config, auth) {
 
     /**
-     * Command: appunti
-     * =====================
-     * Send 'appunti' link
-     *
-     */
-    function appunti(ctx) {
-        if(auth(ctx)) {
-            ctx.reply("[Appunti](https://github.com/dlcgold/Appunti) by @dlcgold", {
-                parse_mode: "Markdown",
-                disable_web_page_preview: true
-            });
-        }
-    }
-    bot.command('appunti', appunti);
-
-    /**
      * Command: sponsor
      * =====================
      * Send link to support this bot
@@ -73,7 +57,7 @@ module.exports = function(bot, info, config, auth) {
      */
     function help(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/appunti - link agli appunti\n/sponsor - link per supportare il bot\n/source - link al codice sorgente del bot\n/version - versione del bot\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che devi ancora scoprire :)\n\nVersion: "+info.version);
+            ctx.reply("Ecco alcuni dei comandi\n\n/start - messaggio di benvenuto\n/sponsor - link per supportare il bot\n/source - link al codice sorgente del bot\n/version - versione del bot\n/help - lista comandi e suggerimenti\n\nE molte parole chiave che devi ancora scoprire :)\n\nVersion: "+info.version);
         }
     }
     bot.command('help', help);
