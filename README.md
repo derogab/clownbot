@@ -3,6 +3,9 @@
 </p>
 <h2 align="center">A clown bot to cheer up conversations in own chat groups</h2>
 
+### Birth
+This bot was born for fun purposes in my university group chat. 
+
 ### Configuration
 Copy `config.yml.tpl` template in `config.yml` with your info.
 
