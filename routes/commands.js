@@ -45,7 +45,7 @@ module.exports = function(bot, info, config, auth) {
      */
     function source(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Puoi trovare il codice sorgente del bot su [github.com/derogab/unisharebot](https://github.com/derogab/unisharebot)", {
+            ctx.reply("Puoi trovare il codice sorgente del bot su [github.com/derogab/clownbot](https://github.com/derogab/clownbot)", {
                 parse_mode: "Markdown",
                 disable_web_page_preview: false
             });

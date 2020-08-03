@@ -1,7 +1,7 @@
 {
-  "name": "unisharebot",
-  "version": "1.4.2",
-  "description": "unisharebot",
+  "name": "clownbot",
+  "version": "1.4.3",
+  "description": "A clown bot to cheer up conversations in own chat groups",
   "main": "bot.js",
   "scripts": {
     "start": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/derogab/unisharebot.git"
+    "url": "https://github.com/derogab/clownbot.git"
   },
   "keywords": [
     "bot",
-    "unishare",
+    "clown",
     "telegram"
   ],
   "author": "derogab",
   "bugs": {
-    "url": "https://github.com/derogab/unisharebot/issues"
+    "url": "https://github.com/derogab/clownbot/issues"
   },
   "dependencies": {
     "fs": "0.0.1-security",
