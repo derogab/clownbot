@@ -14,6 +14,7 @@ Copy `extra.js.tpl` template in `extra.js` to add extra features.
 ```
 docker run \
   -dit \
+  --restart=always \
   --mount type=bind,source=/path/to/host/private/,target=/bot/private \
   derogab/unisharebot
 ```
