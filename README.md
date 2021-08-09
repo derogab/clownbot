@@ -19,7 +19,7 @@ docker run \
   -dit \
   --restart=always \
   --mount type=bind,source=/path/to/host/private/,target=/bot/private \
-  derogab/clownbot
+  ghcr.io/derogab/clownbot
 ```
 Replace `/path/to/host/private/` with absolute path to your private folder (containing config and extra).
 ##### Using source
