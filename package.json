@@ -1,6 +1,6 @@
 {
   "name": "clownbot",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A clown bot to cheer up conversations in own chat groups",
   "main": "bot.js",
   "scripts": {
