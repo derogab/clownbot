@@ -2,7 +2,7 @@
   <img src="./assets/icon.png" width="140px">
 </p>
 <h1 align="center">CLOWNBOT</h1>
-<p align="center">A telegram bot to cheer up conversations in own chat groups.</p>
+<p align="center">A telegram bot to cheer up conversations in own chat groups</p>
 <p align="center">
   <a href="https://github.com/derogab/clownbot/actions/workflows/docker-publish.yml">
     <img src="https://github.com/derogab/clownbot/actions/workflows/docker-publish.yml/badge.svg">
