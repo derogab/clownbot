@@ -1,7 +1,7 @@
 {
   "name": "clownbot",
-  "version": "1.5.1",
-  "description": "A clown bot to cheer up conversations in own chat groups",
+  "version": "1.5.2",
+  "description": "A telegram bot to cheer up conversations in own chat groups",
   "main": "bot.js",
   "scripts": {
     "start": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
