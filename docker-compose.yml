@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+
+  clownbot:
+    container_name: clownbot
+    image: ghcr.io/derogab/clownbot
+    restart: always
+    volumes:
+      - './private:/bot/private'
