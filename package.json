@@ -4,8 +4,7 @@
   "description": "A telegram bot to cheer up conversations in own chat groups",
   "main": "bot.js",
   "scripts": {
-    "start": "pm2 -o ./logs/debug.log -e ./logs/errors.log start bot.js",
-    "stop": "pm2 stop bot.js"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
