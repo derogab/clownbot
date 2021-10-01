@@ -11,7 +11,9 @@ updates:
     directory: '/'
     target-branch: 'dev'
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
+    assignees:
+      - 'derogab'
     labels:
       - 'dependencies'
 
@@ -20,6 +22,8 @@ updates:
     directory: '/'
     target-branch: 'dev'
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
+    assignees:
+      - 'derogab'
     labels:
       - 'dependencies'
