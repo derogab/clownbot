@@ -1,4 +1,4 @@
-const Telegraf = require('telegraf');
+const { Telegraf } = require('telegraf');
 const fs = require('fs');
 const YAML = require('yaml');
 

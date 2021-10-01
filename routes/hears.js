@@ -3,7 +3,7 @@
  * =====================
  * If i write "hi" bot response "hello"
  */
-const Markup = require('telegraf/markup');
+const { Markup } = require('telegraf');
 
 module.exports = function (bot, info, config, auth) {
 
