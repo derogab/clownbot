@@ -3,8 +3,6 @@
  * =====================
  * If i write "hi" bot response "hello"
  */
-const { Markup } = require('telegraf');
-
 module.exports = function (bot, info, config, auth) {
 
 	bot.hears(/\bping\b/i, (ctx) => {
@@ -63,22 +61,34 @@ module.exports = function (bot, info, config, auth) {
 
 	bot.hears(/(spara|kill|shoot)/i, (ctx) => {
 		if(auth(ctx)) {
+
+			// Set keyboard for telegram message
+			const inlineMessageKeyboard = [[
+				{ text: 'Shoot!', callback_data: 'shoot' }
+			]];
+
+			// Send message with keyboard
 			ctx.replyWithAnimation(
-				'https://media.giphy.com/media/26xopsR7cWySdKNgY/giphy.gif',
-				Markup.inlineKeyboard([
-					Markup.callbackButton('Shoot!', 'shoot')
-				]).extra()
+				'https://media.giphy.com/media/26xopsR7cWySdKNgY/giphy.gif', {
+					reply_markup: JSON.stringify({ inline_keyboard: inlineMessageKeyboard })
+				}
 			);
 		}
 	});
 
 	bot.hears(/(boo*om|bomba|bomb|explosion|esplosione)/i, (ctx) => {
 		if(auth(ctx)) {
+
+			// Set keyboard for telegram message
+			const inlineMessageKeyboard = [[
+				{ text: 'Boom!', callback_data: 'boom' }
+			]];
+
+			// Send message with keyboard
 			ctx.replyWithAnimation(
-				'https://media.giphy.com/media/3o7qEcqN5PjN90jNC0/source.gif',
-				Markup.inlineKeyboard([
-					Markup.callbackButton('Boom!', 'boom')
-				]).extra()
+				'https://media.giphy.com/media/3o7qEcqN5PjN90jNC0/source.gif', {
+					reply_markup: JSON.stringify({ inline_keyboard: inlineMessageKeyboard })
+				}
 			);
 		}
 	});
