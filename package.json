@@ -1,6 +1,6 @@
 {
   "name": "clownbot",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "A telegram bot to cheer up conversations in own chat groups",
   "main": "bot.js",
   "scripts": {
