@@ -4,6 +4,9 @@
 <h1 align="center">CLOWNBOT</h1>
 <p align="center">A telegram bot to cheer up conversations in own chat groups</p>
 <p align="center">
+  <a href="https://hub.docker.com/r/derogab/clownbot">
+        <img src="https://img.shields.io/docker/pulls/derogab/clownbot?label=Downloads&logo=docker" alt="Docker Pulls">
+  </a>
   <a href="https://github.com/derogab/clownbot/actions/workflows/docker-publish.yml">
     <img src="https://github.com/derogab/clownbot/actions/workflows/docker-publish.yml/badge.svg">
   </a>
@@ -35,7 +38,7 @@ docker run \
   -dit \
   --restart=always \
   --mount type=bind,source=/path/to/host/private/,target=/bot/private \
-  ghcr.io/derogab/clownbot
+  derogab/clownbot
 ```
 Replace `/path/to/host/private/` with absolute path to your private folder (containing config and extra).
 ##### w/ docker-compose
