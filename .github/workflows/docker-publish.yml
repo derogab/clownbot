@@ -64,7 +64,7 @@ jobs:
         uses: docker/setup-qemu-action@v1
       
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
 
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
@@ -120,7 +120,7 @@ jobs:
         uses: docker/setup-qemu-action@v1
       
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
 
       # Login against a Docker registry except on PR
       # https://github.com/docker/login-action
