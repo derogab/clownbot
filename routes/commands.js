@@ -13,7 +13,7 @@ module.exports = function(bot, info, config, auth) {
      */
     function sponsor(ctx) {
         if(auth(ctx)) {
-            ctx.reply("Puoi supportare il bot a [questo link](https://patreon.com/derogab)", {
+            ctx.reply("Puoi supportare il bot a [questo link](https://github.com/sponsors/derogab)", {
                 parse_mode: "Markdown",
                 disable_web_page_preview: true
             });
