@@ -3,7 +3,7 @@
  * =====================
  * If I click a button ...
  */
-module.exports = function (bot, info, config, auth) {
+module.exports = function (bot, info, env, auth) {
 
 	bot.on('callback_query', (ctx) => {
 

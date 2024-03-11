@@ -3,12 +3,10 @@ const fs = require('fs');
 const YAML = require('yaml');
 
 /**
- * Init
+ * Info
  * =====================
- * Get data from /config.yml and /package.json
+ * Get data from /package.json
  */
-const file = fs.readFileSync('./private/config.yml', 'utf8');
-const config = YAML.parse(file);
 const info = require('./package.json');
 
 /**
@@ -47,10 +45,10 @@ const auth = function(ctx){
  * =====================
  * Commands and hears (reply message). Core of bot.
  */
-require(__dirname + '/routes/hears')(bot, info, config, auth);
-require(__dirname + '/routes/commands')(bot, info, config, auth);
-require(__dirname + '/routes/callbacks')(bot, info, config, auth);
-require(__dirname + '/routes/inline_query')(bot, info, config, auth);
+require(__dirname + '/routes/hears')(bot, info, process.env, auth);
+require(__dirname + '/routes/commands')(bot, info, process.env, auth);
+require(__dirname + '/routes/callbacks')(bot, info, process.env, auth);
+require(__dirname + '/routes/inline_query')(bot, info, process.env, auth);
 
 /**
  * Router Extra
@@ -60,7 +58,7 @@ require(__dirname + '/routes/inline_query')(bot, info, config, auth);
 
 fs.stat('private/extra.js', function(err, stat) {
     if(err == null) {
-        require(__dirname + '/private/extra')(bot, info, config, auth);
+        require(__dirname + '/private/extra')(bot, info, process.env, auth);
     } 
 });
 
