@@ -6,5 +6,7 @@ services:
     container_name: clownbot
     image: derogab/clownbot:latest
     restart: always
+    env_file:
+      - .env
     volumes:
       - './private:/bot/private'

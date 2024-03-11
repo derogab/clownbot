@@ -12,11 +12,18 @@ const config = YAML.parse(file);
 const info = require('./package.json');
 
 /**
+ * Environments
+ * =====================
+ * Get environment variables from .env file
+ */
+require('dotenv').config()
+
+/**
  * Bot
  * =====================
  * Initialize bot instance.
  */
-const bot = new Telegraf(config.bot.token, {username: config.bot.username});
+const bot = new Telegraf(process.env.TELEGRAM_BOT_API_TOKEN, {username: process.env.TELEGRAM_BOT_USERNAME});
 
 /**
  * Auth
@@ -24,14 +31,14 @@ const bot = new Telegraf(config.bot.token, {username: config.bot.username});
  * Authentication tool
  */
 const auth = function(ctx){
-    // if permissions are not specified, all are enabled
-    if(!config.bot.allowed_users){
-        return true;
-    }
-    // else, not available to everyone
-    if(config.bot.allowed_users.includes(ctx.message.chat.id)){
-        return true;
-    }
+    // Get allowed users.
+    const allowedUsersStr = process.env.TELEGRAM_ALLOWED_USERS.trim();
+    const allowedUsers = allowedUsersStr ? allowedUsersStr.split(',') : [];
+    // If permissions are not specified, all are enabled.
+    if(!allowedUsers || allowedUsers.length == 0) return true;
+    // Else check if current user is allowed.
+    if(allowedUsers.includes(ctx.message.chat.id)) return true;
+    // Otherwise, return false.
     return false;
 }
 
