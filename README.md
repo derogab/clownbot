@@ -16,7 +16,7 @@
 **Birth**: This bot was born for fun purposes in my university group chat. 
 
 ## Configuration
-Copy `config.yml.tpl` template in `config.yml` with your info.
+Copy `.env.tpl` template in `.env` with your info.
 
 ## Extra
 Copy `extra.js.tpl` template in `extra.js` to add extra features.
@@ -38,9 +38,13 @@ docker run \
   -dit \
   --restart=always \
   --mount type=bind,source=/path/to/host/private/,target=/bot/private \
+  -e "TELEGRAM_BOT_USERNAME=username" \
+  -e "TELEGRAM_BOT_API_TOKEN=abcd:1234" \
+  -e "TELEGRAM_ALLOWED_USERS=userId1,userId2" \
+  -e "GIPHY_API_KEY=abcd1234" \
   derogab/clownbot
 ```
-Replace `/path/to/host/private/` with absolute path to your private folder (containing config and extra).
+Replace `/path/to/host/private/` with absolute path to your private folder (containing extra) and other configs.
 ##### w/ docker-compose
 ```
 docker-compose up -d
