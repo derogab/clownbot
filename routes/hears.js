@@ -3,7 +3,7 @@
  * =====================
  * If i write "hi" bot response "hello"
  */
-module.exports = function (bot, info, config, auth) {
+module.exports = function (bot, info, env, auth) {
 
 	bot.hears(/\bping\b/i, (ctx) => {
 		if(auth(ctx)) {
@@ -20,7 +20,7 @@ module.exports = function (bot, info, config, auth) {
 	bot.hears(/fail/i, (ctx) => {
 		if(auth(ctx)) {
 
-			var giphy = require('giphy-api')(config.giphy.key);
+			var giphy = require('giphy-api')(env.GIPHY_API_KEY);
 
 			giphy.search({
 				q: 'robot fail',
@@ -41,7 +41,7 @@ module.exports = function (bot, info, config, auth) {
 	bot.hears(/(l([o]+)l|[a]*[h]+[a]+[h]+)/i, (ctx) => {
 		if(auth(ctx)) {
 
-			var giphy = require('giphy-api')(config.giphy.key);
+			var giphy = require('giphy-api')(env.GIPHY_API_KEY);
 
 			giphy.search({
 				q: 'lol',
