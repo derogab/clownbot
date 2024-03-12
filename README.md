@@ -38,10 +38,10 @@ docker run \
   -dit \
   --restart=always \
   --mount type=bind,source=/path/to/host/private/,target=/bot/private \
-  -e "TELEGRAM_BOT_USERNAME=username" \
-  -e "TELEGRAM_BOT_API_TOKEN=abcd:1234" \
-  -e "TELEGRAM_ALLOWED_USERS=userId1,userId2" \
-  -e "GIPHY_API_KEY=abcd1234" \
+  -e "TELEGRAM_BOT_USERNAME=YOUR_BOT_USERNAME_HERE" \
+  -e "TELEGRAM_BOT_API_TOKEN=YOUR_BOT_TOKEN_HERE" \
+  -e "TELEGRAM_ALLOWED_USERS=FIRST_ALLOWED_USER_ID,SECOND_ALLOWED_USER_ID,..." \
+  -e "GIPHY_API_KEY=YOUR_GIPHY_API_KEY_HERE" \
   derogab/clownbot
 ```
 Replace `/path/to/host/private/` with absolute path to your private folder (containing extra) and other configs.
