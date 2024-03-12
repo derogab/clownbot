@@ -3,6 +3,6 @@
  * =====================
  * 
  */
-module.exports = function (bot, info, config, auth) {
+module.exports = function (bot, info, env, auth) {
 
 };
