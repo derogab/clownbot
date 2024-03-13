@@ -34,7 +34,7 @@ const auth = function(ctx){
     // If permissions are not specified, all are enabled.
     if(!allowedUsers || allowedUsers.length == 0) return true;
     // Else check if current user is allowed.
-    if(allowedUsers.includes(ctx.message.chat.id)) return true;
+    if(allowedUsers.includes('' + ctx.message.chat.id)) return true;
     // Otherwise, return false.
     return false;
 }
